@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css" /> 
+        <link rel="script" href="script.js">
+        <title>Doguitos</title> 
+    </head>
+    <body>
+        <h1 > SITE DE DOGUINHOS</h1>
+        <div id="dog1">
+            <img class="imagem1" src="Ibageins/2.jpeg" alt="Sammy"/> 
+            <h2>Sammy</h2>
+        </div>
+        <div id="dog2">
+            <img class="imagem2" src="Ibageins/3.jpeg" alt="Dragão"/> 
+            <h2>Dragão</h2>
+        </div>
+        <div id="dog3">
+            <img class="imagem3" src="Ibageins/4.jpeg" alt="Milton"/> 
+            <h2>Milton</h2>
+        </div>
+        <div id="dog4">
+            <img class="imagem4" src="Ibageins/5.jpeg" alt="Penny"/> 
+            <h2>Penny</h2>
+        </div>
+        <div id="dog5">
+            <img class="imagem5" src="Ibageins/6.jpeg" alt="Nenem"/> 
+            <h2>Nenem</h2>
+        </div>
+        <div id="botauns">
+            <input id="btn" type="button" value="Nome dos Spitz" onclick="mudarNomes()"/> <!--Filter  -->
+            <input id="btn" type="button" value="Idade Real" onclick="MostrarIdade()"/> <!-- Map -->
+            <input id="btn" type="button" value="Soma todas as Idades" onclick="idadeSoma()"/> <!-- Reduce -->
+            <input id="btn" type="button" value="Piorar Site" onclick="mudaTudo()"/>
+        </div>
+
+        <script> 
+        dogs = [
+            {
+                nome: 'Sammy',
+                idade: 6,
+                raca: 'Samoieda'
+            },
+            {
+                nome: 'Dragão',
+                idade: 5,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Milton',
+                idade: 8,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Penny',
+                idade: 6,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Nenem',
+                idade: 4,
+                raca: 'Spitz Alemão'
+            },
+            ];
+
+            //solta seus script brabos aqui
+            
+            // Encontrar os dogs Spitz
+            
+            // var AcharSpitz = dogs.filter( dogs => { if (dogs.raca == 'Spitz Alemão') {
+                
+            //     return dogs.nome;
+                
+            // }})
+            
+            // var NomeSpitz = AcharSpitz.map(AcharSpitz => AcharSpitz.nome); 
+
+            // console.log(NomeSpitz);
+            
+
+            // var NomeSpitz = dogs.filter( cleiton => cleiton.raca === 'Spitz Alemão')
+
+            // console.log( NomeSpitz )
+
+            // // Fazer a idade real (multiplicando por 4)
+            // var idadedog = dogs.map(dogs => dogs.idade * 4)
+
+
+            function mudarNomes() {
+                
+                var nomes = dogs.filter( (item) => item.raca === "Spitz Alemão")
+
+                // document.getElementsByTagName("h1")[0].innerHTML = nomes.nome;
+
+                nomes.forEach(element => {
+                    return alert(element.nome);
+                });
+
+                console.log(nomes)
+            }
+
+            
+
+            function MostrarIdade() {
+                
+                var idadedog = dogs.map(dogs => dogs.idade * 4)
+
+                document.getElementsByTagName("h1")[0].innerHTML = idadedog;
+
+                console.log(idadedog)
+            }
+
+            function idadeSoma() {
+                
+                var somaidade = dogs.reduce( (tot, item) => tot + item.idade, 0)
+
+                console.log(somaidade);
+
+                return alert(somaidade);
+            }
+            
+            function mudaTudo() {
+                
+                document.getElementsByTagName("body")[0].style.backgroundImage = "none";
+                document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+                document.getElementsByTagName("img")[0].src = "Ibageins/6.jpeg"
+                document.getElementsByTagName("img")[1].src = "Ibageins/5.jpeg"
+                document.getElementsByTagName("img")[2].src = "Ibageins/4.jpeg"
+                document.getElementsByTagName("img")[3].src = "Ibageins/3.jpeg"
+                document.getElementsByTagName("img")[4].src = "Ibageins/2.jpeg"
+                document.getElementsByTagName("h2")[0].style.color = "red";
+                document.getElementsByTagName("h2")[1].style.color = "red";
+                document.getElementsByTagName("h2")[2].style.color = "red";
+                document.getElementsByTagName("h2")[3].style.color = "red";
+                document.getElementsByTagName("h2")[4].style.color = "red";
+                document.getElementsByTagName("h2")[0].textContent = "FUNCIONOU"
+                document.getElementsByTagName("h2")[1].textContent = "FUNCIONOU"
+                document.getElementsByTagName("h2")[2].textContent = "FUNCIONOU"
+                document.getElementsByTagName("h2")[3].textContent = "FUNCIONOU"
+                document.getElementsByTagName("h2")[4].textContent = "FUNCIONOU"
+                
+            }
+
+        </script> 
+    </body>
+</html>
