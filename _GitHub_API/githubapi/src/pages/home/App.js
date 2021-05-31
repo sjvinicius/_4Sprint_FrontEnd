@@ -43,7 +43,7 @@ class Repositorios extends React.Component {
       console.log("bucou nao achou")
     )
 
-  }
+  } 
   
   render(){
   
